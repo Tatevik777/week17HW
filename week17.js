@@ -1,4 +1,3 @@
-// Класс Transport, у него есть свойства: type, price, brand и два метода getInfo() и getPrice() ;
 class Transport {
     constructor(type, price, brand, image) {
         this.type = type;
@@ -15,9 +14,7 @@ class Transport {
     getImage() {
         return this.image;
     }
-}
-
-// создать класс Car, который наследует от Transport. Этот класс должен содержать метод getDoorsCount() , который возвращает количество дверей;
+};
 class Car extends Transport {
     constructor(type, price, brand, image, doors) {
         super(type, price, brand, image);
@@ -27,9 +24,6 @@ class Car extends Transport {
         return "Number of doors: " + this.doors;
     }
 }
-
-// создать класс Bike, который наследует от Transport. Этот класс должен содержать метод getMaxSpeed(), который возвращает максимальную скорость мотоцикла. 
-
 class Bike extends Transport {
     constructor(type, price, brand, image, maxSpeed) {
         super(type, price, brand, image);
@@ -41,7 +35,7 @@ class Bike extends Transport {
     }
 }
 
-// Объект для работы
+// Массив объектов c  инфоррмацией о траспортных средствах
 const data = [
     {
         id: 1,
@@ -77,7 +71,7 @@ const data = [
     }
 ];
 
-// Создаём объекты
+// 4 объекта на основе  массива data
 const productCar1 = new Car(
     data[0].type,
     data[0].price,
@@ -106,7 +100,7 @@ const productBike2 = new Bike(
     data[3].image,
     data[3].maxSpeed
 );
-// Объедиянем все продукты в массив карточек продуктов
+// Массив,который объединяет все созданные объекты Car и Bike
 const productCards = [
     productCar1,
     productCar2,
@@ -127,17 +121,9 @@ for (let productCard of productCards) {
     const productImage = document.createElement('img');
     productImage.src = productCard.getImage();
 
-    // const productExtraInfo = document.createElement('h3');
-    // if (productCard.doors === undefined) {
-    //     productExtraInfo.textContent = productCard.getDoorsCount();
-    // } else {
-    //     productExtraInfo.textContent = productCard.getMaxSpeed();
-    // }
-
     catalogue.append(
         productImage,
         productInfo,
-        // productExtraInfo,
         productPrice
     );
 }
