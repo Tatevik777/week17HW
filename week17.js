@@ -56,10 +56,10 @@ const data = [
     {
         id: 3,
         type: 'bike',
-        brand: 'Harley-Davidson',
+        brand: 'Harley-Davidson CVO Street Glide NEW, 2024 "Dark Platinum"',
         maxSpeed: 210,
-        price: 1300000,
-        image: 'https://www.harley-davidson.com/content/dam/h-d/images/product-images/bikes/motorcycle/2022/2022-iron-883/2022-iron-883-016/2022-iron-883-016-motorcycle.jpg'
+        price: 67000,
+        image: 'https://static.insales-cdn.com/images/products/1/6368/791992544/1.jpg'
     },
     {
         id: 4,
@@ -71,7 +71,7 @@ const data = [
     }
 ];
 
-// 4 объекта на основе  массива data
+//экземпляры Car и Bike  на основе  массива data
 const productCar1 = new Car(
     data[0].type,
     data[0].price,
@@ -108,7 +108,7 @@ const productCards = [
     productBike2
 ];
 
-
+//создание элеметов для отображения информации о продукте 
 for (let productCard of productCards) {
     const catalogue = document.getElementById('catalogue');
 
